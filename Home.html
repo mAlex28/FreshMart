@@ -1,60 +1,77 @@
 <!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="PUSL2002 Assignment Website">
         <meta name="keywords" content="HTML, CSS, JavaScript, Boostrap, PHP">
         <meta name="author" content="Group 50">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <title>Fresh Mart</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/home.css">
         <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
-        <title>Fresh Mart</title>
-
         
-    </head>
-    <body>
 
-        <!--Creating the navigation bar-->
-        <!-- //TODO #1 -->
-        <nav class="navbar navbar-expand-md navbar-dark sticky-top navbar-custom">
-            <a class="navbar-brand" href="#">
-                <img src="Images/logo.jpeg" alt="logo of the site">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>    
-                </ul>
-            </div>  
-        </nav>
+    </head>
+    <body data-spy="scroll" data-target="#navbarResponsive">
+
+        <!-- Home -->
+        <div id="home">
+            <!-- Navigation bar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+                <a class="navbar-brand" href="#">
+                    <img src="Images/siteLogo.png" alt="logo of the site">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#course">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>    
+                    </ul>
+                </div>  
+            </nav>
+        </div>
+
+        <!-- Log In -->
+        <div id="course" class="offset">
+
+        </div>
+
+        <!-- About -->
+        <div id="about" class="offset">
+
+        </div>
+
+        <!-- Contact -->
+        <div id="contact" class="offset">
+
+        </div>
 
         <!--Create the footer -->
         <footer>
             <div class="footer">
-                <p> 2021 &copy; Fresh Mart. All rights reserved.</p>
                 <a href="#" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-youtube-square fa-2x"></i></a>
+                <p> 2021 &copy; Fresh Mart. All rights reserved.</p>
             </div>
         </footer>
 
         <!-- Script files -->
         <script src="jquery-3.5.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
     </body>
 </html>
