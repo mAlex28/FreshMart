@@ -3,74 +3,72 @@
 body {
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-    color: #069ce5;
+    color: black;
 }
 
 /* Navigation */
 .navbar {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: .9rem;  /* 1rem = 16px */
-    letter-spacing: .1rem;
+    font-size: 14.4px;  /* 1rem = 16px */
+    letter-spacing: 1.6px;
     background-color: black !important;
 }
 
 .navbar-brand img {
-    height: 2rem;
+    height: 32px;
 
 }
 
 .navbar-nav li {
-    padding-right: .7rem;
+    padding-right: 11.2px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: white;
-    padding-top: .8rem;
+    padding-top: 11.2px;
 }
 
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #069ce5;
+    color: #009e60;
 }
 
 /* Landing page */
 
 .home-inner{
-    background-image: url(coverPage.png);
-    height: 100%;
+    background-image: url(cover.jpg);
+    width: 100%;
+    height: auto;
 }
 
 .caption{
     width: 100%;
     max-width: 100%;
     position: absolute;
-    top: 30%;
+    top: 38%;
     z-index: 1;
     color: whitesmoke;
+    text-transform: uppercase;
 }
 
 .caption h1{
-    font-size: 60.8px;
+    font-size: 50px;
     font-weight: 700;
     text-shadow: 1.6px 1.6px 12.8px black;
     letter-spacing: 9px;
 }
 
-.btn-lg{
-    border-width: 2px;
-    border-radius: 5px;
-    padding: 5px 17px;
+.caption h3 {
+    font-weight: 700;
+    font-style: italic;
 }
 
-.caption {
-    width: 100%;
-    max-width: 100%;
-    position: absolute;
-    top: 38%;
-    /* z-index: 1;
-    color: white; */
-
+.btn-lg{
+    border-width: medium;
+    border-radius: 0;
+    padding: 5px 17px;
+    font-size: 18px;
 }
 
 
