@@ -2,6 +2,7 @@
 require_once('config.php');
 ?>
 <!DOCTYPE html>
+<html>
 <head>
 	<title>Keells Registration Form</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
@@ -34,7 +35,7 @@ require_once('config.php');
 		?>
 	</div>
 	<div>
-		<form action ="registration.php" method="post">
+		<form action ="keellsRegistration.php" method="post">
 			<div class="container">
 				<div class="col-sm-6">
 					<h4> Registration - Keells Staff</h4>
@@ -70,3 +71,4 @@ require_once('config.php');
 		</form>
 	</div>
 </body>
+</html>

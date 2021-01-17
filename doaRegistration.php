@@ -35,7 +35,7 @@ require_once('config.php');
 		?>
 	</div>
 	<div>
-		<form action ="registration.php" method="post">
+		<form action ="/contact.php" method="post">
 			<div class="container">
 				<div class="col-sm-6">
 					<h4> Registration-Department of Agriculture</h4>
