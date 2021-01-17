@@ -178,46 +178,29 @@ hr.socket {
 /* Media Queries */
 
 @media (max-width: 767px){
-.caption h1 {
-    font-size: 36px;
-    letter-spacing: 9px;
-    padding-bottom: 8px;
+    .caption h1 {
+        font-size: 36px;
+        letter-spacing: 9px;
+        padding-bottom: 8px;
+    }
+
+    .caption h3 {
+        font-size: 18px;
+        padding-bottom: 18px;
+    }
+
+    .btn-lg{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .narrow h1 {
+        font-size: 24px;
+    }
+
+    .menu img {
+        max-width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
 }
-
-.caption h3 {
-    font-size: 18px;
-    padding-bottom: 18px;
-}
-
-.btn-lg{
-    font-size: 16px;
-    padding: 8px 16px;
-}
-
-.narrow h1 {
-    font-size: 24px;
-}
-
-.menu img {
-    max-width: 50%;
-    display: block;
-    margin: 0 auto;
-}
-
-
-
-/* BOOSTRAP BREAK POINTS:
-Extra small devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... } */
