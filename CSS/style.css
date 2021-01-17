@@ -35,8 +35,32 @@ body {
 }
 
 /* Landing page */
-.home-inner {
-    background-image: url(Images/coverPage.png);
+
+.home-inner{
+    background-image: url(coverPage.png);
+    height: 100%;
+}
+
+.caption{
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    color: whitesmoke;
+}
+
+.caption h1{
+    font-size: 60.8px;
+    font-weight: 700;
+    text-shadow: 1.6px 1.6px 12.8px black;
+    letter-spacing: 9px;
+}
+
+.btn-lg{
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 5px 17px;
 }
 
 .caption {
@@ -44,6 +68,9 @@ body {
     max-width: 100%;
     position: absolute;
     top: 38%;
+    /* z-index: 1;
+    color: white; */
+
 }
 
 
