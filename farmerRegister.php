@@ -8,6 +8,28 @@
 <head>
 	<title>Registration Form</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        .container {
+			padding-top: 60px;
+		}
+
+		.btn-secondary {
+			border-width: medium;
+			border-radius: 0;
+			text-transform: uppercase;
+			font-size: 15px;
+			padding: 9.6px 19px;
+			margin: 16px;
+			color: white;
+			background-color: #009e60;
+			border-color: #009e60;
+		}
+
+		.btn-secondary:hover {
+			background-color: #004225;
+			border-color: #004225;
+		}
+    </style>
 </head>
 <body>
 	  <?php
@@ -28,7 +50,7 @@
 		<form action ="farmerRegister.php" method="post" enctype="multipart/form-data">
 			<div class="container">
 					<div class="div2">
-					  		<div class="col-sm-5">
+					  		<div class="col-md-12">
 							<h4> Register</h4>
 							<p>Please fill out the information below to Register</p>
 						<hr class= "mb-4">
@@ -40,13 +62,12 @@
                     <input class="form-control" class="mail" type="email" name="email" placeholder="Enter Your Email"> 
                     <input class="form-control" type="password" name="pwd"placeholder="Enter Your Password" required="Must">
                     <input class="form-control" type="password" name="pwdcon"placeholder="Confirm Your Password"required="Must">
-                    <hr class= "mb-4">
+                    <hr class= "mb-2">
                     <p> <b> By creating an account you agree to our </b> <a href="Login_Menu.php"> <b>Terms & Privacy.</b></a></p>
-                    <div class="container signin">
-                    <input class ="btn btn-primary"type="submit" name="create" value="Create Account">
+                    <div class="signin">
+                    <input class ="btn btn-secondary"type="submit" name="create" value="Create Account">
                     </div>			
-                    
-                    	</div>
+                    </div>
                    </div>
                </div>
             </div>
@@ -54,6 +75,3 @@
 	</div>
 </body>
 </html>
-<?php
-    include('footer.php')
-?>

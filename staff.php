@@ -4,7 +4,7 @@
 
 <html>
     <head>
-    <title> keells Login</title>
+    <title> Staff Login</title>
     <?php
         include('header.php')
     ?>
@@ -132,8 +132,8 @@
         <div class="login-box">
             <div id="content-wrap">
             <img src="Images/profile.png" class="profile">
-            <h1>Keells Login </h1>
-            <form action="keellsregister.php" method="POST" enctype="multipart/form-data">
+            <h1>Staff Login </h1>
+            <form action="staff.php" method="POST" enctype="multipart/form-data">
                 <p>Username </p>
                 <input type="text" name="username" placeholder="Enter your Username" required="Must">
 

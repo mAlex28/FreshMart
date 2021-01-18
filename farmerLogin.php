@@ -1,91 +1,3 @@
-<?php
-    // Initialize the session
-    session_start();
-     
-    // Check if the user is already logged in, if yes then redirect him to welcome page
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: main.php");
-        exit;
-    }
-     
-    // Include config file
-    require_once "config.php";
-     
-    // Define variables and initialize with empty values
-    $username = $password = "";
-    $username_err = $password_err = "";
-     
-    // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-     
-        // Check if username is empty
-        if(empty(trim($_POST["nic"]))){
-            $username_err = "Please enter your nic.";
-        } else{
-            $username = trim($_POST["nic"]);
-        }
-        
-        // Check if password is empty
-        if(empty(trim($_POST["password"]))){
-            $password_err = "Please enter your password.";
-        } else{
-            $password = trim($_POST["password"]);
-        }
-        
-        // Validate credentials
-        if(empty($username_err) && empty($password_err)){
-            // Prepare a select statement
-            $sql = "SELECT id, nic, password FROM freshmart.farmer WHERE nic = :nic";
-            
-            if($stmt = $db->prepare($sql)){
-                // Bind variables to the prepared statement as parameters
-                $stmt->bindParam(":nic", $param_username, PDO::PARAM_STR);
-                
-                // Set parameters
-                $param_username = trim($_POST["nic"]);
-                
-                // Attempt to execute the prepared statement
-                if($stmt->execute()){
-                    // Check if username exists, if yes then verify password
-                    if($stmt->rowCount() == 1){
-                        if($row = $stmt->fetch()){
-                            $id = $row["id"];
-                            $username = $row["nic"];
-                            $hashed_password = $row["password"];
-                            if(password_verify($password, $hashed_password)){
-                                // Password is correct, so start a new session
-                                session_start();
-                                
-                                // Store data in session variables
-                                $_SESSION["loggedin"] = true;
-                                $_SESSION["id"] = $id;
-                                $_SESSION["nic"] = $username;                            
-                                
-                                // Redirect user to welcome page
-                                header("location: welcome.php");
-                            } else{
-                                // Display an error message if password is not valid
-                                $password_err = "The password you entered was not valid.";
-                            }
-                        }
-                    } else{
-                        // Display an error message if username doesn't exist
-                        $username_err = "No account found with that nic.";
-                    }
-                } else{
-                    echo "Oops! Something went wrong. Please try again later.";
-                }
-    
-                // Close statement
-                unset($stmt);
-            }
-        }
-        
-        // Close connection
-        unset($db);
-    }
-?>
-
 <html>
     <head>
     <title> Farmer Login</title>
@@ -184,6 +96,47 @@
     
     </head>
     <body>
+        <div>
+        <?php
+        $servername="localhost";
+        $username="root";
+        $password="";
+        $dbname="freshmart";
+      // Create connection
+      $con = mysqli_connect("$servername", "$username","$password", "$dbname");
+      // Check connection
+      if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+      
+      if(isset($_POST["nic"])){
+           if(!($_POST["nic"]) || !($_POST["password"]))  
+           {  
+                echo '<script>alert("Both Fields are required")</script>';  
+           }  
+           else  
+           {  
+                $username =$_POST["nic"];  
+                $password =$_POST["password"];  
+                // $password = md5($password);  
+                $query = "SELECT * FROM freshmart.farmer WHERE nic = '$username' AND password = '$password'";  
+                $result = mysqli_query($con, $query);  
+                if(mysqli_num_rows($result) > 0)  
+                {  
+                    
+                     $_SESSION['nic'] = "$username";
+                     
+                    header("Location:main.php");  
+                      
+                }  
+                else  
+                {  
+                     echo '<script>alert("Wrong User Details")</script>';  
+                }  
+           }  
+          }
+      ?>  
+        </div>
         <div class="login-box">
             <div id="content-wrap">
             <img src="Images/profile.png" class="profile">
