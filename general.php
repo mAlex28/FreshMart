@@ -5,7 +5,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<title>View products</title>
 
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
@@ -29,7 +29,7 @@
 
 <?php include 'header.php'; ?>
 
-<?php include 'dbConnection.php'; ?>
+<?php include 'dbconnect.php'; ?>
 
 
 
@@ -78,9 +78,9 @@ var markerinfo = [
   for( i = 0; i < markerinfo.length; i++ ) {
         
         var pp = new google.maps.LatLng(markerinfo[i][1], markerinfo[i][2]);
-        var marker2 = new google.maps.Marker({position:pp,icon:'Images/productmarker.png',animation:google.maps.Animation.BOUNCE});
+        var marker2 = new google.maps.Marker({position:pp,icon:'images/markerico3.png',animation:google.maps.Animation.BOUNCE});
 			  marker2.setMap(map);
-        var path = "Products/";
+        var path = "uploads/";
         var imagename = markerinfo[i][4];
         var disname = path.concat(imagename);
         var descr = markerinfo[i][5];
@@ -162,7 +162,7 @@ if (mysqli_num_rows($result) > 0)
    <table>
    <tr>
    <td>
-  <img class="card-img-top" style="width: 200px;" src="Products\<?php echo $row['image']; ?>" alt="Card image cap">
+  <img class="card-img-top" style="width: 200px;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   </td>
   <td style="padding-bottom:10%;">
 
@@ -281,7 +281,7 @@ mysqli_close($con);
   </div>
 
 </div>
-<?php include 'dbConnection.php'; ?>
+<?php include 'dbconnect.php'; ?>
 <script>
 
 function deleteproductss() {
@@ -306,7 +306,7 @@ window.location.reload();
 ?>
 </div></div></div></div></div></div>
 <div>
-<?php include 'footer.php'; ?>
+<?php include 'footerfresh.php'; ?>
 
 
 </div>
