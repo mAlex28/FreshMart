@@ -1,4 +1,4 @@
-?php session_start()
+<?php session_start()
 ?>
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link href="css/mapoutstyles.css" rel="stylesheet" type="text/css" >
+
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -14,13 +14,24 @@
 
 <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
 
+<style>
+ 
+</style>
+
+
 </head>
+
 
 <body>
 
-<?php include 'loginheaderfarmer.php'; ?>
+
+
+
+<?php include 'header.php'; ?>
 
 <?php include 'dbConnection.php'; ?>
+
+
 
 <div>
 
@@ -28,27 +39,27 @@
 </div>
 <div class="row">
 
-
-
-<div class="container-fluid" style="padding-right: 0px; padding-left:0px;">
-  
+<div class="container-fluid" style="padding-right: 0px; padding-left:0px; padding-top:50px">
 
 <div>
-
-
-<div id="googleMap" style="width:100%;height:1200px;"></div>
+<h3 style="text-align:center">Available products</h3>
+<div id="googleMap" style="width:100%;height:500px; padding-top:50px"></div>
 
 <script>
 function myMap() {
 var mapProp= {
-  center:new google.maps.LatLng(6.8364,80.0239),
+  center:new google.maps.LatLng(7.0840,80.0098),
   zoom:15,
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
+
+
+
+
 <?php
 
-$sql = "SELECT * FROM `freshmart`.`product`";
+$sql = "SELECT * FROM `product`";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -69,12 +80,12 @@ var markerinfo = [
         var pp = new google.maps.LatLng(markerinfo[i][1], markerinfo[i][2]);
         var marker2 = new google.maps.Marker({position:pp,icon:'Images/productmarker.png',animation:google.maps.Animation.BOUNCE});
 			  marker2.setMap(map);
-        var path = "Products/";
+        var path = "uploads/";
         var imagename = markerinfo[i][4];
         var disname = path.concat(imagename);
         var descr = markerinfo[i][5];
         var infowindow = new google.maps.InfoWindow({
-        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> </br>' + markerinfo[i][0]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >more</button>"
+        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> </br>' + markerinfo[i][0]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >Message</button>"
         });
         //infoWindow.setContent(html);
        /* infowindow2 = new google.maps.InfoWindow({
@@ -93,25 +104,21 @@ var markerinfo = [
 
         }
 
-
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdAsovFi7nnvEWf6suQ963q5hW-3MG8pk&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
 
 </div>
 
 
+
 </div>
-
-
-
 
 <div class="container">
    
-   
   <div class="container" style="  animation: 3s ease-out 0s 1 slideInFromLeft; border-radius: 25px;
-    background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
-  
+    background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%; position:center" >
+  <h4 style="text-align: center;">Product Details:</h4>
   <form action="messagesend.php" method="post" >
   <div class="card card-body" style="
     border: white;">  
@@ -139,7 +146,7 @@ if(is_null($myPhpVar)==1)
 {$myPhpVar=1;
 }
 
-$sql = "SELECT * FROM freshmart.product where pid=$myPhpVar";
+$sql = "SELECT * FROM `product` where pid=$myPhpVar";
 $result = mysqli_query($con, $sql);
 //setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result) > 0)
@@ -148,24 +155,30 @@ if (mysqli_num_rows($result) > 0)
   while($row = mysqli_fetch_assoc($result))
    {
     ?>
-  <div class="card" style="width:auto; border: white;">
+  <div class="card" style="width:500px; border: white;">
 
 
 
    <table>
    <tr>
    <td>
-  <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
+  <img class="card-img-top" style="width: 200px;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   </td>
-  <td style="padding-bottom:20%;">
-
-
-  <a href="index2.php?pid=<?php echo $myPhpVar ?>"> <img style="width:30px;" src="images/flag.png" ></a> </br></br></br></br></br>
-
-  <a  class="btn btn-danger" href="deleteproduct.php?pid=<?php echo $myPhpVar ?>">delete</a>
+  <td style="padding-bottom:10%;">
 
   <!--<button type="button" class="btn btn-danger" onclick="location.href='logout.php'" >Delete</button> -->
   </td>
+  <td><a href="index2.php?pid=<?php echo $myPhpVar ?>"> 
+  <img style="width:30px; height:30px" src="images/flag.png" ></a> 
+  <hr>
+  <a  class="btn btn-danger"  href="deleteproduct.php?pid=<?php echo $myPhpVar ?>">DELETE</a>
+</td>
+  </tr>
+
+  <tr>
+    <td>
+    
+    </td>
   </tr>
 
   </table>
@@ -183,13 +196,10 @@ if (mysqli_num_rows($result) > 0)
    
    
     ?></h1> 
-  <?php
-      echo $row["datetime"];
-     
-      echo $row["price"];
-      ?>
-    <h1 class=cardprice>price  1Kg <?php echo +$row['price']; ?>  lkr</h1> 
-    <p class="card-text"><?php echo $row['description']; ?></p>
+    <p class=cardprice><strong>Date reported:</strong> <?php echo $row['datetime']; ?></p> 
+    <p class=cardprice><strong>Price of 1Kg:</strong> <?php echo +$row['price']; ?>  lkr</p> 
+
+    <p class="card-text"><strong>Description:</strong> <?php echo $row['description']; ?></p>
   </div>
 
 
@@ -224,7 +234,7 @@ if(is_null($senderrr)==1)
 }
 
 
-$sql2 = "SELECT * FROM freshmart.farmer where fid=$senderrr";
+$sql2 = "SELECT * FROM `farmer` where fid=$senderrr";
 $result2 = mysqli_query($con, $sql2);
 //setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result2) > 0)
@@ -234,22 +244,21 @@ if (mysqli_num_rows($result2) > 0)
    {
     ?>
   <div>
-  <h1 style="color:green;">
   <?php
-          echo $row["contact"]; ?>&nbsp;
-   <?php   echo $row["email"]; ?> &nbsp;
-     <?php echo $row["firstname"]; ?>&nbsp;
+          //echo $row["fcontact"]; ?>&nbsp;
+   <?php   //echo $row["femail"]; ?> &nbsp; 
+   <br>
+   <p style="height: 20px;"><strong>Farmer Name:</strong> <?php echo $row["ffirstname"]; ?>&nbsp;</p>
      
-    </h1>
   </div>
 
 
 
   <input style="display:none;" type="text" value="<?php echo $senderrr?>" name="receverid" />
 
-  <label for="lname">message:</label><br>
-  <input type="text" id="mess" name="message" value="Type your message"><br><br>
-  <input class="btn btn-outline-success" type="submit" value="send">
+  <label for="lname"><strong>Send a message:</strong></label><br>
+  <textarea type="text" id="mess" rows="4" cols="10" name="message" value="enter your message here"> </textarea> <br><br>
+  <input class="btn btn-outline-success" style="width: 100px;" type="submit" value="send">
 </div>
 
 <?php
@@ -264,25 +273,16 @@ if (mysqli_num_rows($result2) > 0)
 </div>
 
 
-
 <?php
-
 mysqli_close($con);
-
-
-
 ?>
-
-
-
-
 
   </div>
   </div>
   </div>
 
 </div>
-<?php include 'dbconnect.php'; ?>
+<?php include 'dbConnection.php'; ?>
 <script>
 
 function deleteproductss() {
@@ -295,32 +295,13 @@ window.location.reload();
 
 </script>
 
-
-
-
-
-
-
 <?php mysqli_close($con); 
 
 
  }
 ?>
 
-
-
 <?php 
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
