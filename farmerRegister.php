@@ -32,18 +32,18 @@
     </style>
 </head>
 <body>
-	  <?php
-            if(isset($_POST['submit'])){
-                $nic= $_POST['nic'];
-                $first_name= $_POST['firstname'];
-                $last_name= $_POST['lastname'];
-                $gender = $_POST['gender'];
-                $address= $_POST['address'];
-                $contact= $_POST['contact'];
-                $email= $_POST['email'];
-                $pass= $_POST['pass'];
-                $confpass= $_POST['confpass'];
-            }
+	<?php
+        if(isset($_POST['create']))
+        {
+            $nic =$_POST['nic'];
+            $firstname =$_POST['firstname'];
+            $lastname =$_POST['lastname'];
+            $contact =$_POST['contact'];
+            $address =$_POST['address'];
+            $email =$_POST['email'];
+            $username =$_POST['username'];
+            $password =$_POST['password'];
+        }
         ?>
 	<div>
 
