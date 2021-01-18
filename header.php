@@ -28,7 +28,7 @@
                             <a class="nav-link" href="Home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="farmerRegister.php">Log In</a>
+                            <a class="nav-link" href="farmerLogin.php">Log In</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about">About</a>

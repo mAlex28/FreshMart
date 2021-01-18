@@ -16,7 +16,7 @@
         <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
     </head>
     <body>
-    <div id="footer">
+    <div id="footer" class="offset">
             <footer>
                 <div class="footer">
                     <div class="row justify-content-center">

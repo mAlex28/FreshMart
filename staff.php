@@ -1,7 +1,3 @@
-<?php
-    require_once('config.php');
-?>
-
 <html>
     <head>
     <title> Staff Login</title>
@@ -101,33 +97,45 @@
     </head>
     <body>
     <div>
-        <?php
-            if(isset($_POST['submit'])) {
+    <?php
+        $servername="localhost";
+        $username="root";
+        $password="";
+        $dbname="freshmart";
+      // Create connection
+      $con = mysqli_connect("$servername", "$username","$password", "$dbname");
+      // Check connection
+      if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+      
+      if(isset($_POST["username"])){
+           if(!($_POST["username"]) || !($_POST["password"]))  
+           {  
+                echo '<script>alert("Both Fields are required")</script>';  
+           }  
+           else  
+           {  
                 $username =$_POST["username"];  
                 $password =$_POST["password"];  
-                $password = md5($password);  
-
-                try {
-                    $stmt = $db->prepare("SELECT * FROM freshmart.webmaster WHERE username = '$username' AND password = '$password'");
-                    $stmt->execute();
+                // $password = md5($password);  
+                $query = "SELECT * FROM freshmart.keells, freshmart.doa WHERE username = '$username' AND password = '$password'";  
+                $result = mysqli_query($con, $query);  
+                if(mysqli_num_rows($result) > 0)  
+                {  
                     
-                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                    if($result)  
-                    {   
-                        header("Location:main.php");  
-                        
-                    }  
-                    else  
-                    {  
-                        echo 'alert("Please input valid details")';  
-                    }  
-                }
-                
-                catch(PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-            }
-        ?>
+                     $_SESSION['username'] = "$username";
+                     
+                    header("Location:main.php");  
+                      
+                }  
+                else  
+                {  
+                     echo '<script>alert("Wrong User Details")</script>';  
+                }  
+           }  
+          }
+      ?>  
     </div>
         <div class="login-box">
             <div id="content-wrap">
@@ -144,10 +152,10 @@
                 
             
                 <a href="#">Forgot Password </a> <br>
-                <a href="keellsregister.php">Create an account</a> 
                 
             </form>
             </div>
         </div>
     </body>  
+    
 </html>
