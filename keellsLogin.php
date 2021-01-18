@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title> Staff Login</title>
+    <title> Keells Staff Login</title>
     <?php
         include('header.php')
     ?>
@@ -9,7 +9,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        background-image: url(Images/farm.jpeg);
+        background-image: url(Images/keellslogin.png);
         background-size: cover;
         background-position: center;
         font-family: 'Lato', sans-serif;
@@ -119,7 +119,7 @@
                 $username =$_POST["username"];  
                 $password =$_POST["password"];  
                 // $password = md5($password);  
-                $query = "SELECT * FROM freshmart.keells, freshmart.doa WHERE username = '$username' AND password = '$password'";  
+                $query = "SELECT * FROM freshmart.keells WHERE username = '$username' AND password = '$password'";  
                 $result = mysqli_query($con, $query);  
                 if(mysqli_num_rows($result) > 0)  
                 {  
@@ -140,7 +140,7 @@
         <div class="login-box">
             <div id="content-wrap">
             <img src="Images/profile.png" class="profile">
-            <h1>Staff Login </h1>
+            <h1>Keells Login </h1>
             <form action="staff.php" method="POST" enctype="multipart/form-data">
                 <p>Username </p>
                 <input type="text" name="username" placeholder="Enter your Username" required="Must">

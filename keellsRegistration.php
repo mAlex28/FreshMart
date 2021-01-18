@@ -51,7 +51,7 @@
 				
 				if($result)
 				{
-					echo '<script>Submitted successfully</script>';
+					echo '<script>Registered successfully</script>';
 				} else
 				{
 					echo '<script>Error occured</script>';
