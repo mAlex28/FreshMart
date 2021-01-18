@@ -53,7 +53,7 @@
             position: mapsMouseEvent.latLng,
           });
           infoWindow.setContent(
-            '<h4 style="text-align:center"> Insert new report</h4>   <form action = "inputReport.php" method ="POST"> <input type = "text" style="visibility:hidden" name = "latitude" value="'+mapsMouseEvent.latLng.lat()+'" /> <input type = "text" style="visibility:hidden" name = "longitude" value="'+mapsMouseEvent.latLng.lng()+'" /></br> Date: <input type="text" name="datetime" value="'+dateTime+'">   </br> Crop: <input type="text" name="type"></br> Price: <input type="text" name="price"></br> Description: <input type="text" name="description"></br> </br> Image: <input type="file" name="image"/> </br></br>  <button type="submit" name="submit" class="btn btn-outline-success">Submit</button></form>'
+            '<h4 style="text-align:center"> Insert new report</h4>   <form action = "inputproductdb.php" method ="POST" enctype="multipart/form-data"> <input type = "text" style="visibility:hidden" name = "latitude" value="'+mapsMouseEvent.latLng.lat()+'" /> <input type = "text" style="visibility:hidden" name = "longitude" value="'+mapsMouseEvent.latLng.lng()+'" /></br> Date: <input type="text" name="datetime" value="'+dateTime+'">   </br> Crop: <input type="text" name="type"></br> Price: <input type="text" name="price"></br> Description: <input type="text" name="description"></br> </br> Image: <input type="file" name="image"/> </br></br>  <button type="submit" name="submit" class="btn btn-outline-success">Submit</button></form>'
           );
           infoWindow.open(map);
         });
@@ -61,33 +61,7 @@
     </script>
   </head>
   <body>
-  <?php
-
-include "dbConnection.php";
-
-if (isset($_POST['submit'])) {
-    // do logic
-    $latitude= $_POST['latitude'];
-    $longitude= $_POST['longitude'];
-    $type= $_POST['type'];
-    $description= $_POST['description'];
-    $datetime= $_POST['datetime'];
-    $price= $_POST['price'];
-    $image = $_FILES["image"]["name"]; 
-    $temp_name = $_FILES["image"]["tmp_name"];
-    
-    $move=move_uploaded_file($temp_name, "/Applications/XAMPP/xamppfiles/htdocs/FreshMart/Products/". $image);	
-      
-    $sql = "INSERT INTO freshmart.product (latitude,longitude,price,datetime,type,description,image) values ('$latitude','$longitude','$price','$datetime','$type','$description','$image')";
-
-    if($con->query($sql) === true){
-        echo "successfull";
-    }
-    else{
-        echo "error";
-    }
-}
-?>
+  
   <div class="container-fluid" style="padding-right: 0px; padding-left:0px; ">
     <h3>Insert new product</h3>
     <div class="map" id="map"></div>
