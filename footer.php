@@ -1,8 +1,6 @@
-<?php
-?>
 <html>
     <head>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="description" content="PUSL2002 Assignment Website">
         <meta name="keywords" content="HTML, CSS, JavaScript, Boostrap, PHP">
         <meta name="author" content="Group 50">

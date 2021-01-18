@@ -126,7 +126,7 @@
                     
                      $_SESSION['username'] = "$username";
                      
-                    header("Location:main.php");  
+                    header("Location:createAccount.php");  
                       
                 }  
                 else  
