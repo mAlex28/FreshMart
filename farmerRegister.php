@@ -70,7 +70,7 @@
             if($sql)
             {
                 
-                header("Location:main.php");  
+                header("Location:farmerLogin.php");  
             } else
             {
                 echo '<script>alert("Error")</script>';
