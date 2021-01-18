@@ -103,7 +103,7 @@
     <div>
         <?php
             if(isset($_POST['submit'])) {
-                $username =$_POST["username"];  
+                $username =$_POST["nic"];  
                 $password =$_POST["password"];  
                 $password = md5($password);  
 

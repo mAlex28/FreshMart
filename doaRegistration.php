@@ -52,10 +52,10 @@
 			
 			if($result)
 			{
-				echo 'Submitted successfully';
+				echo '<script>Submitted successfully</script>';
 			} else
 			{
-				echo 'Error occured';
+				echo '<script>Error occured</script>';
 			}
 		}
 		?>

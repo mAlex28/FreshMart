@@ -149,6 +149,8 @@ footer {
     color: whitesmoke;
     padding: 32px 0 32px;
     margin-top: 16px;
+    position: absolute;
+    bottom: 0;
 }
 
 footer img {
