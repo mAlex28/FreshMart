@@ -108,7 +108,7 @@
                 $password = md5($password);  
 
                 try {
-                    $stmt = $db->prepare("SELECT * FROM freshmart.farmer WHERE nic = '$username' AND password = '$password'");
+                    $stmt = $db->prepare("SELECT * FROM freshmart.webmaster WHERE username = '$username' AND password = '$password'");
                     $stmt->execute();
                     
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
