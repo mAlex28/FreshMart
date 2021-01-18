@@ -134,7 +134,7 @@
             <img src="Images/profile.png" class="profile">
             <h1>Farmer Login </h1>
             <form action="farmerLogin.php" method="POST" enctype="multipart/form-data">
-                <p>NIC </p>
+                <p>username </p>
                 <input type="text" name="nic" placeholder="Enter your NIC" required="Must">
 
                 <p>Password</p>
