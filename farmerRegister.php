@@ -3,12 +3,14 @@
     include('header.php');
 ?>
 
+<!DOCTYPE html>
 <html>
-    <head>
-        
-    </head>
-    <body>
-        <?php
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	  <?php
             if(isset($_POST['submit'])){
                 $nic= $_POST['nic'];
                 $first_name= $_POST['firstname'];
@@ -21,39 +23,36 @@
                 $confpass= $_POST['confpass'];
             }
         ?>
+	<div>
 
-    <div class="login-box" style="height:auto;">
-
-    <div class="container">
-        <div class="row">
-            <div class="div2">
-                    <form action="farmerRegister.php" method="POST" enctype="multipart/form-data">
-                    <h1>Register</h1>
-
-                    <input type="text" name="nic" placeholder="Enter nic number">
-                    <input type="text" name="firstname" placeholder="Enter Your First Name">
-                    <input type="text" name="lastname" placeholder="Enter Your Last Name">
-                    <input type="text" name="contact" placeholder="Enter mobile number">
-                    <input type="text" name="address" placeholder="Enter your address">
-                    <input class="mail" type="email" name="email" placeholder="Enter Your Email"> 
-                    <input type="password" name="pwd"placeholder="Enter Your Password">
-                    <input type="password" name="pwdcon"placeholder="Confirm Your Password">
-            
-    
-    <button type="submit" name="submit" class="submitbtn">Create Account</button>
-</div>
-<p>By creating an account you agree to our <a href="Login_Menu.php">Terms & Privacy</a>.</p>
-<div class="container signin">
-
-</div>
-</div>
-
-        </form>
-
-        
-        
-        </div>
-    </body>
+		<form action ="farmerRegister.php" method="post" enctype="multipart/form-data">
+			<div class="container">
+					<div class="div2">
+					  		<div class="col-sm-5">
+							<h4> Register</h4>
+							<p>Please fill out the information below to Register</p>
+						<hr class= "mb-4">
+					<input class="form-control" type="text" name="nic" placeholder="Enter NIC Number" required="Must">
+                    <input class="form-control" type="text" name="firstname" placeholder="Enter Your First Name" required="Must">
+                 	 <input class="form-control" type="text" name="lastname" placeholder="Enter Your Last Name" required="Must">
+                    <input class="form-control"type="text" name="contact" placeholder="Enter mobile number" required="Must">
+                    <input class="form-control" type="text" name="address" placeholder="Enter your address" required="Must">
+                    <input class="form-control" class="mail" type="email" name="email" placeholder="Enter Your Email"> 
+                    <input class="form-control" type="password" name="pwd"placeholder="Enter Your Password" required="Must">
+                    <input class="form-control" type="password" name="pwdcon"placeholder="Confirm Your Password"required="Must">
+                    <hr class= "mb-4">
+                    <p> <b> By creating an account you agree to our </b> <a href="Login_Menu.php"> <b>Terms & Privacy.</b></a></p>
+                    <div class="container signin">
+                    <input class ="btn btn-primary"type="submit" name="create" value="Create Account">
+                    </div>			
+                    
+                    	</div>
+                   </div>
+               </div>
+            </div>
+		</form>
+	</div>
+</body>
 </html>
 <?php
     include('footer.php')
