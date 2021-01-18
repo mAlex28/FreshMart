@@ -118,7 +118,7 @@
            {  
                 $username =$_POST["nic"];  
                 $password =$_POST["password"];  
-                $password = md5($password);  
+       
                 $query = "SELECT * FROM freshmart.farmer WHERE nic = '$username' AND password = '$password'";  
                 $result = mysqli_query($con, $query);  
                 if(mysqli_num_rows($result) > 0)  
