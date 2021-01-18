@@ -126,7 +126,7 @@
                     
                      $_SESSION['nic'] = "$username";
                      
-                    header("Location:main.php");  
+                    header("Location:inputReport.php");  
                       
                 }  
                 else  

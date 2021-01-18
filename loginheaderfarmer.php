@@ -25,16 +25,13 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="Home.html">Home</a>
+                            <a class="nav-link" href="inputReport.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="farmerLogin.php">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">About</a>
-                        </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contact</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Log OUt</a>
                         </li>    
                     </ul>
                 </div>  
