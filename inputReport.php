@@ -70,7 +70,7 @@
             <div class="col-12 narrow text-center">
                 <hr class="clients-hr">
                 <a class="btn btn-secondary btn-md" href="editReport.php">Edit Report</a>
-                <a class="btn btn-secondary btn-md" href="deleteReport.php">Update Report</a>
+                <a class="btn btn-secondary btn-md" href="deleteReport.php">Delete Report</a>
                 <hr class="clients-hr">
             </div> 
     </div>
